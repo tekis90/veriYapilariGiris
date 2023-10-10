@@ -1,0 +1,60 @@
+
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+//Bagli liste (linked List)
+
+struct Node
+{
+    int x;
+    Node*next;
+    
+};
+
+
+int main()
+{
+    
+    
+//listenin başını (root veya kök) işaret edecek işaretçi 
+Node *root;
+
+//yeni bir bağlı liste düğümü oluşturuluyor 
+//ve bu düğümün başlangıç adresini root işaretçisine atiyoruz.
+root=new Node();
+
+//ilk dugumun degiskenine deger ataniyor
+root->x=10;
+
+//yeni bir bağlı liste düğümü için bellek alanı ayriliyor
+root->next=new Node;
+
+//ikinci dugumun degiskenine deger ataniyor
+root->next->x=22;
+
+//yeni bir bağlı liste düğümü için bellek alanı ayriliyor
+root->next->next=new Node;
+
+//ucuncu dugumun degiskenine deger ataniyor
+root->next->next->x=66;
+
+//son dugumun next tine null ataniyor
+root->next->next->next=NULL;
+
+//std::cout << root->next->next->x << std::endl;
+
+Node * iter;
+
+iter=root;
+
+while(iter!=NULL)
+{
+    
+    cout<<iter->x<<endl;
+    iter=iter->next;
+        
+}
+
+    return 0;
+}
